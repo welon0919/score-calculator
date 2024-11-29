@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div id="main">
+        <h1>加權計算機</h1>
+        <div id="input">
+            <label for="" class="subjectText">國語</label>
+            <input type="number" class="scoreInput" id="chinese" min="0" max="100" value="0"
+                oninput="validateInput(this)"><br>
+            <label for="" class="subjectText">英文</label>
+            <input type="number" class="scoreInput" id="english" min="0" max="100" value="0"
+                oninput="validateInput(this)"><br>
+            <label for="" class="subjectText">數學</label>
+            <input type="number" class="scoreInput" id="math" min="0" max="100" value="0"
+                oninput="validateInput(this)"><br>
+            <label for="" class="subjectText">生物</label>
+            <input type="number" class="scoreInput" id="biology" min="0" max="100" value="0"
+                oninput="validateInput(this)"><br>
+            <label for="" class="subjectText">歷史</label>
+            <input type="number" class="scoreInput" id="history" min="0" max="100" value="0"
+                oninput="validateInput(this)"><br>
+            <label for="" class="subjectText">地理</label>
+            <input type="number" class="scoreInput" id="geography" min="0" max="100" value="0"
+                oninput="validateInput(this)"><br>
+            <label for="" class="subjectText">公民</label>
+            <input type="number" class="scoreInput" id="civic" min="0" max="100" value="0"
+                oninput="validateInput(this)"><br>
+            <button id="calculateBtn">計算</button>
+        </div>
+        <label for="" id="scoreOutput"></label><br>
+        <label for="" id="scoreMinusOutput"></label>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
