@@ -3,6 +3,9 @@ const max = 100;
 const calculateBtn = document.getElementById("calculateBtn");
 const scoreOutput = document.getElementById("scoreOutput");
 const scoreMinusOutput = document.getElementById("scoreMinusOutput")
+const scoreAvgOutput = document.getElementById("scoreAvgOutput");
+
+
 const subjects = ["chinese", "english", "math", "biology", "history", "geography", "civic"]
 
 
@@ -18,6 +21,7 @@ const weight = {
 
 var scoreTotal = 0;
 var scoreMinusTotal = 0;
+var weightTotal = 0;
 
 function validateInput(input) {
     const value = parseInt(input.value);
@@ -32,11 +36,14 @@ function validateInput(input) {
 function calcScore() {
     scoreTotal = 0;
     scoreMinusTotal = 0;
+    weightTotal = 0;
     for (let subject of subjects) {
         let score = document.getElementById(subject).value;
         score *= weight[subject];
+
         if (score != 0) {
             scoreTotal += score;
+            weightTotal += weight[subject];
             scoreMinusTotal += (100 * weight[subject] - score);
 
         }
@@ -47,6 +54,7 @@ function calcScore() {
 
 function updateOutput() {
     scoreOutput.textContent = `加權後的總分是: ${scoreTotal}`;
+    scoreAvgOutput.textContent = `加權後的平均分是: ${(scoreTotal / weightTotal).toFixed(2)}`
     scoreMinusOutput.textContent = `加權後的總扣分是: ${scoreMinusTotal}`;
 
 }
